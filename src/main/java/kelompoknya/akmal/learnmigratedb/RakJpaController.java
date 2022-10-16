@@ -14,6 +14,7 @@ import java.util.Collection;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import kelompoknya.akmal.learnmigratedb.exceptions.IllegalOrphanException;
 import kelompoknya.akmal.learnmigratedb.exceptions.NonexistentEntityException;
 import kelompoknya.akmal.learnmigratedb.exceptions.PreexistingEntityException;
@@ -25,7 +26,7 @@ import kelompoknya.akmal.learnmigratedb.exceptions.PreexistingEntityException;
 public class RakJpaController implements Serializable {
 
     public RakJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+        this.emf = Persistence.createEntityManagerFactory("kelompoknya.akmal_learnmigratedb_jar_0.0.1-SNAPSHOTPU");
     }
     private EntityManagerFactory emf = null;
 

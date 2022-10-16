@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import kelompoknya.akmal.learnmigratedb.exceptions.NonexistentEntityException;
@@ -22,7 +23,7 @@ import kelompoknya.akmal.learnmigratedb.exceptions.PreexistingEntityException;
 public class BukuJpaController implements Serializable {
 
     public BukuJpaController(EntityManagerFactory emf) {
-        this.emf = emf;
+        this.emf = Persistence.createEntityManagerFactory("kelompoknya.akmal_learnmigratedb_jar_0.0.1-SNAPSHOTPU");
     }
     private EntityManagerFactory emf = null;
 
